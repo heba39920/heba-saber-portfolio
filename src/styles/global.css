@@ -1,0 +1,82 @@
+:root{
+    --primary-color: #222222;
+    --light-color: #1DCD9F;
+   
+    --white :#fff;
+}
+::-webkit-scrollbar {
+  width: 10px;
+   border-radius: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+     background: var(--light-color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #064735;
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  transition: all .5 ease-in-out;
+  -webkit-transition: all .5 ease-in-out;
+  -moz-transition: all .5 ease-in-out;
+  -ms-transition: all .5 ease-in-out;
+  -o-transition: all .5 ease-in-out;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #0b7557;
+  border-radius: 12px;
+}
+/* navbar */
+/* base navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;    /* initial state */
+  transition: background 0.3s ease;
+  box-shadow: none;
+}
+
+/* scrolled state */
+.navbar.scrolled {
+  background: #222222ed; 
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+/* hero back ground img */
+/* .background{
+    background-image: url(../assets/images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+  /* Container holds the video and content */
+    .video-background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      overflow: hidden;
+      z-index: -1; /* stays behind content */
+    }
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover; /* fill the screen nicely */
+    }
+    /* Foreground content */
+    .content {
+      position: relative;
+      z-index: 1;
+   
+    }
