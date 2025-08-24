@@ -3,17 +3,34 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { video } from "../../assets/images";
+import { useEffect, useState } from "react"
+import Loader from "../Loader/Loader";
 
 
 const MasterLayout = () => {
+   const [loading, setLoading] = useState(true);
+   
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading){
+     return <Loader loading={loading}/>
+  }
   return (
     <>
+
       {/* Skip link for accessibility */}
       <a href="#main-content" className="sr-only focusable skip-link">
         Skip to main content
       </a>
 
       <div className="bg-[var(--primary-color)] min-h-screen font-[Poppins, sans-serif] content">
+          
         {/* Visually-hidden helpers for accessibility text */}
         <header aria-label="Site header" role="banner">
           <NavBar />
