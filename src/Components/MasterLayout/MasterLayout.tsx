@@ -3,24 +3,11 @@ import { Outlet } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { video } from "../../assets/images";
-import { useEffect, useState } from "react"
-import Loader from "../Loader/Loader";
+
 
 
 const MasterLayout = () => {
-   const [loading, setLoading] = useState(true);
-   
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading){
-     return <Loader loading={loading}/>
-  }
   return (
     <>
 
