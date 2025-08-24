@@ -38,7 +38,7 @@ className="flex items-center gap-2"
   
      <RPConfig >
       <RPProvider src={CV}>
-        <RPDefaultLayout className="w-[600px] h-[660px] " mobileWidth={0}>
+        <RPDefaultLayout className="w-[600px] h-[660px] " mobileWidth={500}>
           <RPPages />
         </RPDefaultLayout>
       </RPProvider>
