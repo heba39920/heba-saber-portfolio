@@ -1,9 +1,19 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <section aria-label="Contact information" className="mt-12 text-center">
+     <AnimatePresence mode="popLayout">
+    <motion.section 
+       
+            
+        role="projectCard"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.9 }}
+                  transition={{delay: 1.3,duration: .3}}
+                  layout aria-label="Contact information" className="mt-12 text-center">
       <div className="border-t-2 border-[#ffffffd5] w-[20%] mx-auto my-20" aria-hidden="true" />
 
       <h2 className="text-2xl md:text-4xl font-bold" aria-label="Let’s connect and collaborate">
@@ -61,7 +71,8 @@ const Contact = () => {
           </a>
         </li>
       </ul>
-    </section>
+</motion.section>
+    </AnimatePresence>
   );
 };
 

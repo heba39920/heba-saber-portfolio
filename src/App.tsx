@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { Home, NotFound } from "./Pages"
+import { About, Home, NotFound, Projects, Resume } from "./Pages"
 import MasterLayout from "./Components/MasterLayout/MasterLayout"
+
 
 
 
@@ -12,7 +13,12 @@ function App() {
         errorElement: <NotFound/>,
         children: [
          {index: true , element: <Home/>},
-         {path: "home" , element: <Home/>}
+         {path: "home" , element: <Home/>},
+         {path: "about" , element: <About/>},
+         {path: "projects" , element: <Projects/>},
+         {path: "resume" , element: <Resume/>},
+
+         
 
         ],
       }
